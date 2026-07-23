@@ -91,14 +91,6 @@ python main.py
 
 ---
 
-## 🔮 Possible Extensions
-
-- Swap the synthetic per-match data generator for a real cricket stats API/feed
-- Add live leaderboards across saved squads
-- Package as a standalone executable with PyInstaller
-- Port the UI to PyQt6/PySide6
-
----
 
 ## 📄 License
 
@@ -106,4 +98,9 @@ MIT — free to use, modify, and build on.
 
 ---
 
-<p align="center">Made with ❤️ by <b>Shreya Verma</b></p>
+
+## ⭐ Show Your Support
+
+If you like this project, please consider giving it a ⭐ on GitHub.
+
+Thank you for visiting! 🚀
