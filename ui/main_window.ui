@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>980</width><height>640</height></rect>
+  </property>
+  <property name="minimumSize">
+   <size><width>900</width><height>600</height></size>
+  </property>
+  <property name="windowTitle">
+   <string>PitchXI — Fantasy Cricket</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing"><number>14</number></property>
+    <property name="leftMargin"><number>18</number></property>
+    <property name="topMargin"><number>16</number></property>
+    <property name="rightMargin"><number>18</number></property>
+    <property name="bottomMargin"><number>16</number></property>
+
+    <item>
+     <widget class="QLabel" name="lblAppTitle">
+      <property name="text"><string>🏏  PitchXI</string></property>
+      <property name="objectName"><string>lblAppTitle</string></property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLabel" name="lblAppSubtitle">
+      <property name="text"><string>Build your dream XI within budget, then evaluate it against a live match.</string></property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QFrame" name="statsBar">
+      <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+      <layout class="QGridLayout" name="statsGrid">
+       <property name="leftMargin"><number>16</number></property>
+       <property name="topMargin"><number>12</number></property>
+       <property name="rightMargin"><number>16</number></property>
+       <property name="bottomMargin"><number>12</number></property>
+       <property name="horizontalSpacing"><number>28</number></property>
+
+       <item row="0" column="0"><widget class="QLabel" name="lblBatCountTitle"><property name="text"><string>BATSMEN</string></property></widget></item>
+       <item row="1" column="0"><widget class="QLabel" name="lblBatCount"><property name="text"><string>0</string></property></widget></item>
+
+       <item row="0" column="1"><widget class="QLabel" name="lblBowCountTitle"><property name="text"><string>BOWLERS</string></property></widget></item>
+       <item row="1" column="1"><widget class="QLabel" name="lblBowCount"><property name="text"><string>0</string></property></widget></item>
+
+       <item row="0" column="2"><widget class="QLabel" name="lblArCountTitle"><property name="text"><string>ALL-ROUNDERS</string></property></widget></item>
+       <item row="1" column="2"><widget class="QLabel" name="lblArCount"><property name="text"><string>0</string></property></widget></item>
+
+       <item row="0" column="3"><widget class="QLabel" name="lblWkCountTitle"><property name="text"><string>WICKET-KEEPER</string></property></widget></item>
+       <item row="1" column="3"><widget class="QLabel" name="lblWkCount"><property name="text"><string>0</string></property></widget></item>
+
+       <item row="0" column="5"><widget class="QLabel" name="lblPointsAvailableTitle"><property name="text"><string>POINTS AVAILABLE</string></property></widget></item>
+       <item row="1" column="5"><widget class="QLabel" name="lblPointsAvailable"><property name="objectName"><string>lblPointsAvailable</string></property><property name="text"><string>1000</string></property></widget></item>
+
+       <item row="0" column="6"><widget class="QLabel" name="lblPointsUsedTitle"><property name="text"><string>POINTS USED</string></property></widget></item>
+       <item row="1" column="6"><widget class="QLabel" name="lblPointsUsed"><property name="objectName"><string>lblPointsUsed</string></property><property name="text"><string>0</string></property></widget></item>
+
+       <item row="0" column="8"><widget class="QLabel" name="lblTeamNameTitle"><property name="text"><string>TEAM</string></property></widget></item>
+       <item row="1" column="8"><widget class="QLabel" name="lblTeamName"><property name="objectName"><string>lblTeamName</string></property><property name="text"><string>No team yet</string></property></widget></item>
+
+       <item row="0" column="9" rowspan="2">
+        <spacer name="statsSpacer">
+         <property name="orientation"><enum>Qt::Horizontal</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="bodyLayout">
+      <property name="spacing"><number>16</number></property>
+
+      <item>
+       <widget class="QGroupBox" name="groupAvailable">
+        <property name="title"><string>Player Pool</string></property>
+        <layout class="QVBoxLayout" name="leftPanel">
+         <property name="spacing"><number>10</number></property>
+         <item>
+          <layout class="QHBoxLayout" name="radioLayout">
+           <item><widget class="QRadioButton" name="radioBat"><property name="text"><string>Batsmen</string></property></widget></item>
+           <item><widget class="QRadioButton" name="radioBow"><property name="text"><string>Bowlers</string></property></widget></item>
+           <item><widget class="QRadioButton" name="radioAr"><property name="text"><string>All-rounders</string></property></widget></item>
+           <item><widget class="QRadioButton" name="radioWk"><property name="text"><string>Wicket-keepers</string></property></widget></item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="listAvailablePlayers">
+           <property name="minimumSize"><size><width>300</width><height>340</height></size></property>
+           <property name="alternatingRowColors"><bool>true</bool></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblHint">
+           <property name="text"><string>Double-click a player to add them to your squad →</string></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QGroupBox" name="groupSelected">
+        <property name="title"><string>Your Squad</string></property>
+        <layout class="QVBoxLayout" name="rightPanel">
+         <property name="spacing"><number>10</number></property>
+         <item>
+          <widget class="QListWidget" name="listSelectedPlayers">
+           <property name="minimumSize"><size><width>300</width><height>340</height></size></property>
+           <property name="alternatingRowColors"><bool>true</bool></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblHint2">
+           <property name="text"><string>Double-click a player to drop them from the squad</string></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry"><rect><x>0</x><y>0</y><width>980</width><height>26</height></rect></property>
+   <widget class="QMenu" name="menuManageTeams">
+    <property name="title"><string>Manage Teams</string></property>
+    <addaction name="actionNewTeam"/>
+    <addaction name="actionOpenTeam"/>
+    <addaction name="actionSaveTeam"/>
+    <addaction name="actionEvaluateTeam"/>
+   </widget>
+   <addaction name="menuManageTeams"/>
+  </widget>
+
+  <action name="actionNewTeam"><property name="text"><string>🆕  New Team</string></property></action>
+  <action name="actionOpenTeam"><property name="text"><string>📂  Open Team</string></property></action>
+  <action name="actionSaveTeam"><property name="text"><string>💾  Save Team</string></property></action>
+  <action name="actionEvaluateTeam"><property name="text"><string>📊  Evaluate Team</string></property></action>
+
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
