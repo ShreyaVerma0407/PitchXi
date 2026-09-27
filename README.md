@@ -72,7 +72,7 @@ PitchXI/
 **1. Clone and install dependencies**
 
 ```bash
-git clone https://github.com/<your-username>/pitchxi.git
+git clone https://github.com/ShreyaVerma0407/PitchXi.git
 cd pitchxi
 pip install -r requirements.txt
 ```
